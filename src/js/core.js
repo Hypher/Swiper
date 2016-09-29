@@ -944,6 +944,10 @@ s.updateActiveIndex = function () {
     snapIndex = Math.floor(newActiveIndex / s.params.slidesPerGroup);
     if (snapIndex >= s.snapGrid.length) snapIndex = s.snapGrid.length - 1;
 
+    if(s.params.loop) {
+        newActiveIndex += s.loopedSlides;
+    }
+    
     if (newActiveIndex === s.activeIndex) {
         return;
     }
